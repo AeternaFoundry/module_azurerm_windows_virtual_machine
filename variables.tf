@@ -389,6 +389,6 @@ EOT
     ])
     error_message = "must not be empty"
   }
-  # Note: 65 additional provider-side validators are enforced at apply time but not mirrored as validation{} blocks here (bespoke or non-mechanically-translatable).
+  # Note: 70 additional provider-side validators are enforced at apply time but not mirrored as validation{} blocks here (bespoke or non-mechanically-translatable).
 }
 
