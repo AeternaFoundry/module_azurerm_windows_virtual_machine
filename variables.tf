@@ -256,14 +256,6 @@ EOT
   validation {
     condition = alltrue([
       for k, v in var.windows_virtual_machines : (
-        v.admin_username == null || (length(v.admin_username) <= 20)
-      )
-    ])
-    error_message = "[from computeValidate.WindowsAdminUsername: invalid when len(value) > 20]"
-  }
-  validation {
-    condition = alltrue([
-      for k, v in var.windows_virtual_machines : (
         v.os_disk.disk_size_gb == null || (v.os_disk.disk_size_gb >= 0 && v.os_disk.disk_size_gb <= 4095)
       )
     ])
@@ -389,6 +381,6 @@ EOT
     ])
     error_message = "must not be empty"
   }
-  # Note: 70 additional provider-side validators are enforced at apply time but not mirrored as validation{} blocks here (bespoke or non-mechanically-translatable).
+  # Note: 61 additional provider-side validators are enforced at apply time but not mirrored as validation{} blocks here (bespoke or non-mechanically-translatable).
 }
 
